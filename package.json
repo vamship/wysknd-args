@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "ajv": "^4.4.0",
-    "clone": "^1.0.2"
+    "clone": "^1.0.2",
+    "wysknd-error": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

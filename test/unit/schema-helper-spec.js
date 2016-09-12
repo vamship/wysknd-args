@@ -6,6 +6,8 @@ const _chai = require('chai');
 _chai.use(require('sinon-chai'));
 _chai.use(require('chai-as-promised'));
 const expect = _chai.expect;
+const _errorTypes = require('wysknd-error');
+const SchemaError = _errorTypes.SchemaError;
 
 const _path = require('path');
 const _testValueProvider = require('wysknd-test').testValueProvider;
@@ -101,7 +103,7 @@ describe('[argUtils]', () => {
                 _ajvObj._schemaValidationResults = false;
                 _ajvObj._schemaValidator.errors = [schemaErr];
                 const ret = validator({});
-                expect(ret).to.be.an.instanceof(Error);
+                expect(ret).to.be.an.instanceof(SchemaError);
                 expect(ret.message).to.equal(errMessage);
             });
 
@@ -115,7 +117,7 @@ describe('[argUtils]', () => {
                 _ajvObj._schemaValidationResults = false;
                 _ajvObj._schemaValidator.errors = [schemaErr];
                 const ret = validator({});
-                expect(ret).to.be.an.instanceof(Error);
+                expect(ret).to.be.an.instanceof(SchemaError);
                 expect(ret.message).to.equal(errMessage);
             });
 
@@ -131,7 +133,7 @@ describe('[argUtils]', () => {
                 _ajvObj._schemaValidationResults = false;
                 _ajvObj._schemaValidator.errors = [schemaErr];
                 const ret = validator({});
-                expect(ret).to.be.an.instanceof(Error);
+                expect(ret).to.be.an.instanceof(SchemaError);
                 expect(ret.message).to.equal(errMessage);
             });
 
